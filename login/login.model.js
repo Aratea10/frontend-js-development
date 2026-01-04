@@ -1,6 +1,6 @@
-export const createUser = async (email, password) => {
+export const loginUser = async (email, password) => {
     try {
-        const response = await fetch('http://localhost:8000/auth/register', {
+        const response = await fetch('http://localhost:8000/auth/login', {
             method: "POST",
             body: JSON.stringify({
                 username: email,
@@ -17,7 +17,7 @@ export const createUser = async (email, password) => {
         }
 
     } catch (error) {
-        const errorMessage = error.cause === "data" ? error.message : "Error creando un usuario";
+        const errorMessage = error.cause === "data" ? error.message : "Error iniciando sesión";
         throw new Error(errorMessage)
     }
 }
