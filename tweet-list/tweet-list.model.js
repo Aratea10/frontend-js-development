@@ -1,16 +1,10 @@
-export const getTweets = async () => {
-    let tweets = [];
+export const buildTweet = (tweet) => {
+    return `
+    <h3>${tweet.handler} escribió el ${tweet.date}: </h3>
+    <h4>${tweet.message}</h4>
+    `
+}
 
-    try {
-        const response = await fetch('http://localhost:8000/api/twees');
-        if (!response.ok) {
-            throw new Error();
-        }
-        tweets = await response.json();
-    } catch (error) {
-        throw new Error("Los tweets no están disponibles")
-    }
-
-
-    return tweets;
+export const buildEmptyTweets = () => {
+    return `<p>No hay tweets disponibles</p>`
 }
