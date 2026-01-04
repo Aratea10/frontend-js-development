@@ -8,7 +8,7 @@ const notificationsContainer = document.querySelector("#notifications")
 
 const { showNotification } = notificationsController(notificationsContainer)
 const { show, hide } = loaderController(loaderContainer);
-
+showNotification('notificación de prueba')
 tweetListContainer.addEventListener('start-fetching-tweets', () => {
     // tengo que mostrar la ruleta
     show();
